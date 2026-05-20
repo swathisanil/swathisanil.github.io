@@ -15,8 +15,8 @@
   --gold-light: #e8c97a;
   --gold-dim: rgba(201,168,76,0.12);
   --text: #e8e4dc;
-  --text-muted: #b8b2a7;
-  --text-dim: #8e887d;
+  --text-muted: #cec9c0;
+  --text-dim: #aca69c;
   --green: #4ade80;
   --accent: #4a9eff;
 }
@@ -222,7 +222,7 @@ section { padding: 6rem 4rem; position: relative; }
 
 /* ── STORY ── */
 .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3.5rem; align-items: start; }
-.story-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; }
+.story-text { font-size: 0.95rem; color: #cec9c0; line-height: 1.9; }
 .story-text p + p { margin-top: 1.4rem; }
 .story-text strong { color: var(--text); font-weight: 500; }
 .story-moment { background: var(--card); border: 1px solid var(--border); padding: 2rem; border-left: 3px solid var(--gold); }
@@ -244,7 +244,7 @@ section { padding: 6rem 4rem; position: relative; }
 .exp-role { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.2rem; }
 .exp-company { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 1rem; }
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-.exp-bullets li { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; padding-left: 1.2rem; position: relative; }
+.exp-bullets li { font-size: 0.88rem; color: #d0cabf; line-height: 1.7; padding-left: 1.2rem; position: relative; }
 .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; }
 .exp-bullets strong { color: var(--text); font-weight: 500; }
 .exp-tag {
@@ -280,7 +280,7 @@ section { padding: 6rem 4rem; position: relative; }
   letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.9rem;
 }
 .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.9rem; }
-.project-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+.project-desc { font-size: 0.88rem; color: #cec9c0; line-height: 1.7; margin-bottom: 1rem; }
 .project-insight {
   font-family: 'Cormorant Garamond', serif; font-style: italic;
   font-size: 0.88rem; color: var(--gold-light);
@@ -504,6 +504,73 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
 .pcm-value { color: var(--text-muted); }
 .pcm-value strong { color: var(--text); font-weight: 500; }
 
+
+/* ── DASHBOARD SCREENSHOTS ── */
+.project-stack-text {
+  font-size: 0.72rem; color: #b7af9f; margin: 0.5rem 0 1rem;
+  font-family: 'DM Mono', monospace; letter-spacing: 0.04em;
+}
+.project-image-wrap {
+  margin: 1rem 0 1.3rem; overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #0d0d14; position: relative;
+}
+.project-image-wrap::after {
+  content: 'Dashboard Preview';
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  color: rgba(201,168,76,0.3); letter-spacing: 0.2em; text-transform: uppercase;
+  z-index: 0;
+}
+.project-image {
+  width: 100%; display: block;
+  transition: transform 0.45s ease;
+  position: relative; z-index: 1;
+}
+.project-card:hover .project-image { transform: scale(1.04); }
+.project-img-placeholder {
+  width: 100%; aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #13131e 0%, #1a1a28 50%, #13131e 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.6rem; position: relative; overflow: hidden;
+}
+.project-img-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.placeholder-icon { font-size: 1.8rem; opacity: 0.4; position: relative; z-index: 1; }
+.placeholder-text {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  color: var(--gold); opacity: 0.4; letter-spacing: 0.2em;
+  text-transform: uppercase; position: relative; z-index: 1;
+}
+.placeholder-bars {
+  display: flex; gap: 4px; align-items: flex-end;
+  position: relative; z-index: 1; opacity: 0.25;
+}
+.placeholder-bar {
+  width: 8px; background: var(--gold); border-radius: 2px 2px 0 0;
+}
+
+/* ── LIVE DASHBOARD BUTTON ── */
+.btn-live {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  color: var(--gold); background: var(--gold-dim);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 0.35rem 0.8rem; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none;
+  transition: all 0.3s; margin-top: 1rem; cursor: pointer;
+}
+.btn-live:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); }
+.btn-live-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; animation: pulse 2s ease infinite; }
+
 </style>
 </head>
 <body>
@@ -534,12 +601,12 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="status-dot"></div>
       Available · Immediate Joiner · Dubai, UAE
     </div>
-    <div class="hero-eyebrow">Data Analyst</div>
+    <div class="hero-eyebrow">Data Analyst · Power BI · SQL · Python</div>
     <h1 class="hero-name">Swathi<br><em>Anilkumar</em></h1>
-    <p class="hero-subtitle">Power BI · SQL · Python · Business Intelligence</p>
+    <p class="hero-subtitle">Business Intelligence · KPI Dashboards · Analytics</p>
     <p class="hero-tagline">
-      <strong>MSc Data Analytics · Aston University.</strong>
-      Data Analyst specializing in KPI reporting, Power BI dashboards, SQL analytics, forecasting, and business intelligence solutions across retail and operations datasets.
+      <strong>MSc Data Analytics · Aston University · Power BI Certified.</strong>
+      Data Analyst specializing in Power BI dashboards, SQL analytics, and business intelligence — turning raw data into KPIs that drive decisions.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">View My Work</a>
@@ -631,10 +698,10 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="exp-role">Data Officer <span class="exp-tag">UK</span></div>
       <div class="exp-company">UNSEEN UK · United Kingdom</div>
       <ul class="exp-bullets">
-        <li>Automated reporting workflows with <strong>Power Automate</strong> — improved delivery speed by <strong>20%</strong> and reduced errors by <strong>10%</strong></li>
-        <li>Built <strong>Salesforce dashboards</strong> that eliminated manual reporting and accelerated client invoicing by <strong>20%</strong></li>
-        <li>Extracted, cleaned and validated CRM data using Excel to produce KPI reports trusted by senior leadership</li>
-        <li>Designed standardised templates improving cross-team data consolidation and audit readiness</li>
+        <li>Designed and deployed <strong>Salesforce CRM dashboards</strong> that eliminated manual reporting — <strong>client invoicing accelerated by 20%</strong> and finance leadership gained real-time KPI visibility for the first time</li>
+        <li>Automated 6 recurring reporting workflows with <strong>Power Automate</strong> — reduced report delivery time by <strong>20%</strong> and cut data entry errors by <strong>10%</strong>, freeing analyst hours for higher-value work</li>
+        <li>Extracted, cleansed and validated CRM datasets using <strong>Excel + Power Query</strong>; produced weekly KPI packs presented to senior leadership and used in board-level decisions</li>
+        <li>Built standardised data templates adopted cross-team — improved audit readiness and reduced consolidation time by an estimated <strong>3 hrs/week</strong></li>
       </ul>
     </div>
 
@@ -643,10 +710,9 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="exp-role">Team Leader & Data Analyst <span class="exp-tag">UK</span></div>
       <div class="exp-company">THE NEC, BIRMINGHAM</div>
       <ul class="exp-bullets">
-        <li>Developed <strong>KPI dashboards</strong> tracking operational performance across a major events venue</li>
-        <li>Applied data analysis to optimise workflows — improved customer satisfaction by <strong>10%</strong></li>
-        <li>Identified process gaps through workflow mapping; reduced setup time by <strong>18%</strong></li>
-        <li>Collaborated with stakeholders to define metrics aligned with strategic targets</li>
+        <li>Built <strong>KPI dashboards in Power BI</strong> tracking real-time operational performance across a 380-acre venue with 100K+ annual attendees — used by shift managers to allocate resources dynamically</li>
+        <li>Conducted workflow analysis and identified <strong>3 critical process bottlenecks</strong>; implemented process changes that reduced event setup time by <strong>18%</strong> and improved customer satisfaction scores by <strong>10%</strong></li>
+        <li>Partnered with senior stakeholders to define <strong>15 operational KPIs</strong>; aligned reporting cadence to weekly leadership reviews, ensuring data-driven decision-making at all levels</li>
       </ul>
     </div>
 
@@ -655,9 +721,9 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="exp-role">Junior Data Analyst <span class="exp-tag">India</span></div>
       <div class="exp-company">PBOOKS · Kerala, India</div>
       <ul class="exp-bullets">
-        <li>Built KPI dashboards improving marketing efficiency by <strong>12%</strong></li>
-        <li>Developed forecasting models improving inventory planning accuracy by <strong>90%</strong></li>
-        <li>Reduced database query time by <strong>20%</strong> through query optimisation</li>
+        <li>Built <strong>marketing KPI dashboards</strong> tracking campaign performance across digital channels — identified underperforming spend segments, improving overall marketing efficiency by <strong>12%</strong></li>
+        <li>Developed <strong>Python + Excel forecasting models</strong> for inventory planning; improved stock prediction accuracy by <strong>90%</strong>, reducing overstock write-offs and preventing stockout losses</li>
+        <li>Optimised 12+ <strong>MySQL queries</strong> through indexing and restructuring — cut average query execution time by <strong>20%</strong>, enabling faster reporting cycles across the product catalogue</li>
       </ul>
     </div>
 
@@ -715,6 +781,7 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       </div>
 
       <a href="https://github.com/swathisanil/Retail-analysis" target="_blank" class="cs-github-link">View on GitHub ↗</a>
+      <a href="#" class="btn-live" style="margin-top:0.8rem" title="Replace # with your published Power BI link"><span class="btn-live-dot"></span>Live Dashboard ↗</a>
     </div>
 
     <!-- RIGHT: Findings + Recommendations -->
@@ -759,6 +826,21 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="project-number">01 · 2024</div>
       <div class="project-tag">UAE Real Estate</div>
       <h3 class="project-title">Dubai Property Market Analysis</h3>
+      <div class="project-stack-text">Excel · Pivot Tables · EDA · UAE Market</div>
+      <div class="project-image-wrap">
+        <img src="images/Dubai_analysis.png" alt="Dubai Property Market Dashboard" class="project-image"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none">
+          <div class="placeholder-bars">
+            <div class="placeholder-bar" style="height:22px"></div>
+            <div class="placeholder-bar" style="height:45px"></div>
+            <div class="placeholder-bar" style="height:30px"></div>
+            <div class="placeholder-bar" style="height:38px"></div>
+            <div class="placeholder-bar" style="height:14px"></div>
+          </div>
+          <div class="placeholder-text">Property Market EDA · Excel</div>
+        </div>
+      </div>
       <div class="project-case-meta">
         <div class="pcm-row"><span class="pcm-label">Problem</span><span class="pcm-value">What drives property pricing variation across Dubai's 30+ districts, and which amenities command the highest premium?</span></div>
         <div class="pcm-row"><span class="pcm-label">Method</span><span class="pcm-value">Full EDA using Excel pivot analysis across 5 emirates — segmented by location, property type, and amenity profile.</span></div>
@@ -779,6 +861,22 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="project-number">02 · 2024</div>
       <div class="project-tag">Retail Intelligence</div>
       <h3 class="project-title">Full-Stack Retail Revenue Analysis</h3>
+      <div class="project-stack-text">Python · MySQL · Power BI · DAX · RFM</div>
+      <div class="project-image-wrap">
+        <img src="images/Executive_summary.png" alt="Retail Executive Summary Dashboard" class="project-image"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none">
+          <div class="placeholder-bars">
+            <div class="placeholder-bar" style="height:28px"></div>
+            <div class="placeholder-bar" style="height:42px"></div>
+            <div class="placeholder-bar" style="height:18px"></div>
+            <div class="placeholder-bar" style="height:36px"></div>
+            <div class="placeholder-bar" style="height:50px"></div>
+            <div class="placeholder-bar" style="height:24px"></div>
+          </div>
+          <div class="placeholder-text">Executive Summary · Power BI</div>
+        </div>
+      </div>
       <div class="project-case-meta">
         <div class="pcm-row"><span class="pcm-label">Problem</span><span class="pcm-value">Revenue growth had stalled despite high volume — root cause unknown without customer-level analysis.</span></div>
         <div class="pcm-row"><span class="pcm-label">Finding</span><span class="pcm-value"><strong>Top 20% of customers = 68% of revenue</strong> with no retention mechanism. Q4 cohorts showed 40% churn within 90 days.</span></div>
@@ -792,6 +890,7 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="project-stack">
         <span class="stack-tag">Python</span><span class="stack-tag">MySQL</span><span class="stack-tag">Power BI</span><span class="stack-tag">DAX</span><span class="stack-tag">RFM</span>
       </div>
+      <a href="#" class="btn-live" title="Replace # with your published Power BI link"><span class="btn-live-dot"></span>Live Dashboard ↗</a>
     </a>
 
     <a href="https://github.com/swathisanil/Population_Growth" target="_blank" class="project-card">
@@ -799,6 +898,22 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="project-number">03 · 2024</div>
       <div class="project-tag">Forecasting · ML</div>
       <h3 class="project-title">73-Year Global Population Forecast</h3>
+      <div class="project-stack-text">Python · Scikit-learn · Pandas · UN Data</div>
+      <div class="project-image-wrap">
+        <img src="images/Population_forecast.png" alt="Population Forecast Model" class="project-image"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-img-placeholder" style="display:none">
+          <div class="placeholder-bars">
+            <div class="placeholder-bar" style="height:16px"></div>
+            <div class="placeholder-bar" style="height:28px"></div>
+            <div class="placeholder-bar" style="height:38px"></div>
+            <div class="placeholder-bar" style="height:46px"></div>
+            <div class="placeholder-bar" style="height:52px"></div>
+            <div class="placeholder-bar" style="height:58px"></div>
+          </div>
+          <div class="placeholder-text">73yr Forecast · ML Model</div>
+        </div>
+      </div>
       <div class="project-case-meta">
         <div class="pcm-row"><span class="pcm-label">Problem</span><span class="pcm-value">Can ML models reliably forecast national population trajectories across diverse demographic profiles over a 73-year span?</span></div>
         <div class="pcm-row"><span class="pcm-label">Method</span><span class="pcm-value">Trained and evaluated multiple Scikit-learn models on UN data (India, China, US, UK, Brazil) — Basis of MSc distinction.</span></div>
