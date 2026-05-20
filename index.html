@@ -516,14 +516,7 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
   border: 1px solid rgba(255,255,255,0.1);
   background: #0d0d14; position: relative;
 }
-.project-image-wrap::after {
-  content: 'Dashboard Preview';
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'DM Mono', monospace; font-size: 0.6rem;
-  color: rgba(201,168,76,0.3); letter-spacing: 0.2em; text-transform: uppercase;
-  z-index: 0;
-}
+/* ::after removed — placeholder handles empty state */
 .project-image {
   width: 100%; display: block;
   transition: transform 0.45s ease;
@@ -535,6 +528,7 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
   background: linear-gradient(135deg, #13131e 0%, #1a1a28 50%, #13131e 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 0.6rem; position: relative; overflow: hidden;
+  /* Always visible by default — hidden by JS only when real image loads */
 }
 .project-img-placeholder::before {
   content: '';
@@ -829,8 +823,10 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="project-stack-text">Excel · Pivot Tables · EDA · UAE Market</div>
       <div class="project-image-wrap">
         <img src="images/Dubai_analysis.png" alt="Dubai Property Market Dashboard" class="project-image"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="project-img-placeholder" style="display:none">
+             style="display:none"
+             onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+             onerror="this.style.display='none'">
+        <div class="project-img-placeholder">
           <div class="placeholder-bars">
             <div class="placeholder-bar" style="height:22px"></div>
             <div class="placeholder-bar" style="height:45px"></div>
@@ -864,8 +860,10 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="project-stack-text">Python · MySQL · Power BI · DAX · RFM</div>
       <div class="project-image-wrap">
         <img src="images/Executive_summary.png" alt="Retail Executive Summary Dashboard" class="project-image"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="project-img-placeholder" style="display:none">
+             style="display:none"
+             onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+             onerror="this.style.display='none'">
+        <div class="project-img-placeholder">
           <div class="placeholder-bars">
             <div class="placeholder-bar" style="height:28px"></div>
             <div class="placeholder-bar" style="height:42px"></div>
@@ -901,8 +899,10 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       <div class="project-stack-text">Python · Scikit-learn · Pandas · UN Data</div>
       <div class="project-image-wrap">
         <img src="images/Population_forecast.png" alt="Population Forecast Model" class="project-image"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="project-img-placeholder" style="display:none">
+             style="display:none"
+             onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+             onerror="this.style.display='none'">
+        <div class="project-img-placeholder">
           <div class="placeholder-bars">
             <div class="placeholder-bar" style="height:16px"></div>
             <div class="placeholder-bar" style="height:28px"></div>
