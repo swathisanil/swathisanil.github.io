@@ -858,7 +858,14 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
       </div>
     </a>
 
-    <a href="https://github.com/swathisanil/Retail-analysis" target="_blank" class="project-card">
+   # FINAL INTERACTIVE RETAIL PROJECT SECTION
+
+Copy and paste this ENTIRE section to replace your current retail project card.
+
+---
+
+```html
+<a href="https://github.com/swathisanil/Retail-analysis" target="_blank" class="project-card">
 
   <div class="project-arrow">↗</div>
 
@@ -874,39 +881,53 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
     SQL • Python • Power BI • Pandas • DAX
   </div>
 
-  <!-- DASHBOARD BUTTONS -->
+  <!-- MAIN THUMBNAIL -->
+
+  <div class="retail-thumbnail">
+    <img src="images/retail-chart.png"
+         alt="Retail Analytics Overview"
+         class="retail-thumb-img">
+  </div>
+
+  <!-- DASHBOARD TABS -->
 
   <div class="dashboard-tabs">
 
-    <button class="dashboard-tab active"
+    <div class="dashboard-tab active"
       onclick="event.preventDefault(); switchDashboard('executive', this)">
       01 · Executive Overview
-    </button>
+    </div>
 
-    <button class="dashboard-tab"
+    <div class="dashboard-tab"
       onclick="event.preventDefault(); switchDashboard('customer', this)">
       02 · Customer Intelligence
-    </button>
+    </div>
 
-    <button class="dashboard-tab"
+    <div class="dashboard-tab"
       onclick="event.preventDefault(); switchDashboard('product', this)">
       03 · Product Performance
-    </button>
+    </div>
 
   </div>
 
-  <!-- DASHBOARD IMAGE -->
+  <!-- INTERACTIVE DASHBOARD -->
 
   <div class="dashboard-showcase">
 
-    <img id="dashboardImage"
-         src="images/Executive_summary.png"
-         alt="Retail Dashboard"
-         class="dashboard-preview">
+    <a id="dashboardLink"
+       href="images/Executive_summary.png"
+       target="_blank">
+
+      <img id="dashboardImage"
+           src="images/Executive_summary.png"
+           alt="Retail Dashboard"
+           class="dashboard-preview">
+
+    </a>
 
   </div>
 
-  <!-- BUSINESS METRICS -->
+  <!-- KPI METRICS -->
 
   <div class="project-metrics">
 
@@ -953,16 +974,231 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
 
   </div>
 
-  <!-- GITHUB -->
+</a>
+```
 
-  <a href="https://github.com/swathisanil/Retail-analysis"
-     target="_blank"
-     class="cs-github-link"
-     style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;">
+---
 
-     View on GitHub ↗
+# CSS (PASTE BELOW YOUR PROJECT CSS)
 
-  </a>
+```css
+.project-stack-text{
+  font-size:0.72rem;
+  color:#b7af9f;
+  margin:0.5rem 0 1rem;
+  font-family:'DM Mono', monospace;
+  letter-spacing:0.04em;
+}
+
+/* MAIN THUMBNAIL */
+
+.retail-thumbnail{
+  margin:1rem 0 1.5rem;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.retail-thumb-img{
+  width:100%;
+  display:block;
+}
+
+/* DASHBOARD TABS */
+
+.dashboard-tabs{
+  display:flex;
+  gap:0.8rem;
+  flex-wrap:wrap;
+  margin:1.5rem 0;
+}
+
+.dashboard-tab{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#c8c1b5;
+  padding:0.85rem 1.2rem;
+  border-radius:14px;
+  font-family:'DM Mono', monospace;
+  font-size:0.68rem;
+  letter-spacing:0.08em;
+  cursor:pointer;
+  transition:all 0.35s ease;
+}
+
+.dashboard-tab:hover{
+  border-color:var(--gold);
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+.dashboard-tab.active{
+  background:rgba(212,175,55,0.08);
+  border-color:var(--gold);
+  color:var(--gold);
+  box-shadow:0 0 25px rgba(212,175,55,0.12);
+}
+
+/* DASHBOARD SHOWCASE */
+
+.dashboard-showcase{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  background:#111;
+  margin-bottom:1.5rem;
+}
+
+.dashboard-preview{
+  width:100%;
+  display:block;
+  transition:transform 0.5s ease;
+}
+
+.project-card:hover .dashboard-preview{
+  transform:scale(1.02);
+}
+
+/* METRICS */
+
+.project-metrics{
+  display:flex;
+  gap:1rem;
+  margin:1rem 0 1.5rem;
+}
+
+.metric{
+  flex:1;
+  padding:0.9rem;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+}
+
+.metric-value{
+  font-size:1rem;
+  font-weight:600;
+  color:var(--gold);
+}
+
+.metric-label{
+  font-size:0.72rem;
+  color:#c8c1b5;
+  margin-top:0.3rem;
+}
+
+/* FONT VISIBILITY */
+
+.project-desc{
+  color:#ddd6cb;
+  font-size:0.92rem;
+  line-height:1.7;
+}
+
+.project-insight{
+  color:#c8c1b5;
+  line-height:1.7;
+}
+```
+
+---
+
+# JAVASCRIPT (PASTE ABOVE </body>)
+
+```html
+<script>
+
+function switchDashboard(type, button){
+
+  const image =
+    document.getElementById("dashboardImage");
+
+  const info =
+    document.getElementById("dashboardInfo");
+
+  const link =
+    document.getElementById("dashboardLink");
+
+  const tabs =
+    document.querySelectorAll(".dashboard-tab");
+
+  tabs.forEach(tab =>
+    tab.classList.remove("active"));
+
+  button.classList.add("active");
+
+  if(type === "executive"){
+
+    image.src =
+    "images/Executive_summary.png";
+
+    link.href =
+    "images/Executive_summary.png";
+
+    info.innerHTML = `
+      Executive KPI dashboard analyzing revenue,
+      customer trends, and sales performance
+      across UK retail transactions.
+    `;
+  }
+
+  if(type === "customer"){
+
+    image.src =
+    "images/customer_intelligence.png";
+
+    link.href =
+    "images/customer_intelligence.png";
+
+    info.innerHTML = `
+      RFM segmentation and customer behavior
+      analysis identifying high-value customers,
+      repeat purchasers, and retention opportunities.
+    `;
+  }
+
+  if(type === "product"){
+
+    image.src =
+    "images/product_performance.png";
+
+    link.href =
+    "images/product_performance.png";
+
+    info.innerHTML = `
+      Product-level revenue and demand analysis
+      highlighting best-selling categories,
+      seasonal trends, and profitability insights.
+    `;
+  }
+}
+
+</script>
+```
+
+---
+
+# IMPORTANT
+
+You need ONE additional image:
+
+```text
+images/retail-chart.png
+```
+
+Use:
+
+* KPI chart
+* sales trend chart
+* revenue graph
+* customer segmentation chart
+
+This becomes your premium retail project thumbnail.
+
+Do NOT repeat the dashboards elsewhere anymore.
+
+This should now be your FINAL retail project structure.
+
 
 </a>
     
