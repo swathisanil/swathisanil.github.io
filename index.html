@@ -3189,25 +3189,294 @@ footer{
 
 <!-- links -->
 
-<a
-  href="https://github.com/swathisanil/Retail-analysis"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="cs-github-link"
->
-  View on GitHub ↗
+<!-- PROJECT CARD -->
+<a href="https://github.com/swathisanil/Retail-analysis"
+   target="_blank"
+   class="project-card">
+
+  <div class="project-arrow">↗</div>
+
+  <div class="project-number">02 · 2024</div>
+
+  <div class="project-tag">Retail Intelligence</div>
+
+  <h3 class="project-title">
+    Retail Intelligence & Revenue Analytics
+  </h3>
+
+  <!-- TECH STACK TEXT -->
+
+  <div class="project-stack-text">
+    SQL • Python • Power BI • Pandas • DAX
+  </div>
+
+  <!-- DASHBOARD BUTTONS -->
+
+  <div class="dashboard-tabs">
+
+    <button class="dashboard-tab active"
+      onclick="event.preventDefault(); switchDashboard('executive', this)">
+      01 · Executive Overview
+    </button>
+
+    <button class="dashboard-tab"
+      onclick="event.preventDefault(); switchDashboard('customer', this)">
+      02 · Customer Intelligence
+    </button>
+
+    <button class="dashboard-tab"
+      onclick="event.preventDefault(); switchDashboard('product', this)">
+      03 · Product Performance
+    </button>
+
+  </div>
+
+  <!-- DASHBOARD IMAGE -->
+
+  <div class="dashboard-showcase">
+
+    <img id="dashboardImage"
+         src="images/Executive_summary.png"
+         alt="Retail Dashboard"
+         class="dashboard-preview">
+
+  </div>
+
+  <!-- BUSINESS METRICS -->
+
+  <div class="project-metrics">
+
+    <div class="metric">
+      <div class="metric-value">500K+</div>
+      <div class="metric-label">Transactions</div>
+    </div>
+
+    <div class="metric">
+      <div class="metric-value">£8M+</div>
+      <div class="metric-label">Revenue</div>
+    </div>
+
+    <div class="metric">
+      <div class="metric-value">Top 20%</div>
+      <div class="metric-label">Customers</div>
+    </div>
+
+  </div>
+
+  <!-- DESCRIPTION -->
+
+  <p class="project-desc">
+    Analyzed over 500K UK retail transactions using SQL, Python, and Power BI to uncover customer purchasing behavior, sales trends, and high-value revenue opportunities.
+  </p>
+
+  <!-- INSIGHT -->
+
+  <div class="project-insight" id="dashboardInfo">
+
+    Performed customer segmentation, KPI tracking, cohort analysis, and forecasting to support data-driven business decisions and executive reporting.
+
+  </div>
+
+  <!-- STACK -->
+
+  <div class="project-stack">
+
+    <span class="stack-tag">Python</span>
+    <span class="stack-tag">SQL</span>
+    <span class="stack-tag">Power BI</span>
+    <span class="stack-tag">DAX</span>
+    <span class="stack-tag">Customer Segmentation</span>
+
+  </div>
+
+  <!-- GITHUB -->
+
+  <a href="https://github.com/swathisanil/Retail-analysis"
+     target="_blank"
+     class="cs-github-link"
+     style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;">
+
+     View on GitHub ↗
+
+  </a>
+
 </a>
 
-<a
-  href="#"
-  class="btn-live"
-  style="margin-top:0.8rem"
-  title="Replace with your published Power BI dashboard URL"
-  aria-label="Open live Power BI dashboard"
->
-  <span class="btn-live-dot"></span>
-  Live Dashboard ↗
-</a>
+<!-- CSS -->
+
+<style>
+
+.dashboard-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.7rem;
+
+  margin:1.2rem 0 1.4rem;
+}
+
+.dashboard-tab{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#c8c1b5;
+
+  padding:0.85rem 1.2rem;
+  border-radius:14px;
+
+  font-family:'DM Mono', monospace;
+  font-size:0.68rem;
+
+  letter-spacing:0.08em;
+
+  cursor:pointer;
+
+  transition:all 0.35s ease;
+}
+
+.dashboard-tab:hover{
+  border-color:var(--gold);
+  color:#fff;
+
+  transform:translateY(-2px);
+}
+
+.dashboard-tab.active{
+  background:rgba(212,175,55,0.08);
+  border-color:var(--gold);
+  color:var(--gold);
+
+  box-shadow:0 0 25px rgba(212,175,55,0.12);
+}
+
+/* DASHBOARD SHOWCASE */
+
+.dashboard-showcase{
+  border-radius:18px;
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  background:#111;
+
+  margin-bottom:1.5rem;
+}
+
+.dashboard-preview{
+  width:100%;
+  display:block;
+
+  transition:transform 0.5s ease;
+}
+
+.project-card:hover .dashboard-preview{
+  transform:scale(1.02);
+}
+
+/* METRICS */
+
+.project-metrics{
+  display:flex;
+  gap:1rem;
+
+  margin:1rem 0 1.5rem;
+}
+
+.metric{
+  flex:1;
+
+  padding:0.9rem;
+
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+}
+
+.metric-value{
+  font-size:1rem;
+  font-weight:600;
+
+  color:var(--gold);
+}
+
+.metric-label{
+  font-size:0.72rem;
+  color:#c8c1b5;
+
+  margin-top:0.3rem;
+}
+
+/* FONT VISIBILITY */
+
+.project-desc{
+  color:#ddd6cb;
+
+  font-size:0.92rem;
+  line-height:1.7;
+}
+
+.project-insight{
+  color:#c8c1b5;
+  line-height:1.7;
+}
+
+@media(max-width:768px){
+
+  .dashboard-tabs{
+    flex-direction:column;
+  }
+
+  .project-metrics{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function switchDashboard(type, button){
+
+  const image = document.getElementById("dashboardImage");
+  const info  = document.getElementById("dashboardInfo");
+
+  document.querySelectorAll(".dashboard-tab")
+    .forEach(tab => tab.classList.remove("active"));
+
+  button.classList.add("active");
+
+  if(type === "executive"){
+
+    image.src = "images/Executive_summary.png";
+
+    info.innerHTML =
+      "Executive KPI dashboard showing revenue trends, sales performance, monthly growth, and high-level business insights for leadership reporting.";
+
+  }
+
+  if(type === "customer"){
+
+    image.src = "images/Customer_analysis.png";
+
+    info.innerHTML =
+      "Customer segmentation analysis identifying high-value buyers, repeat purchase behavior, retention opportunities, and RFM-based customer intelligence.";
+
+  }
+
+  if(type === "product"){
+
+    image.src = "images/Product_analysis.png";
+
+    info.innerHTML =
+      "Product performance dashboard highlighting category contribution, top-selling products, repeat purchase drivers, and profitability insights.";
+
+  }
+
+}
+
+</script>
 
 </div>
     <!-- RIGHT: Findings + Recommendations -->
