@@ -1095,22 +1095,33 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
   <!-- case study rows -->
   <div style="margin-bottom:1.2rem;">
     <div class="rc-case-row">
-      <span class="rc-case-label">Problem</span>
-      <span class="rc-case-value">Revenue growth had stalled despite 500K+ transactions - root cause unknown without customer-level analysis.</span>
-    </div>
-    <div class="rc-case-row">
-      <span class="rc-case-label">Method</span>
-      <span class="rc-case-value"><strong>MySQL</strong> extraction → <strong>Python RFM segmentation</strong> → <strong>Power BI</strong> DAX dashboards across 3 reporting pages.</span>
-    </div>
-    <div class="rc-case-row">
-      <span class="rc-case-label">Finding</span>
-      <span class="rc-case-value"><strong>Top 20% of customers = 68% of revenue.</strong> Q4 cohorts showed 40% churn within 90 days. Dormant high-value segment worth £180K.</span>
-    </div>
-    <div class="rc-case-row">
-      <span class="rc-case-label">Recommendation</span>
-      <span class="rc-case-value">Loyalty programme for Champions tier + targeted win-back campaign for dormant RFM segment.</span>
-    </div>
-  </div>
+     <span class="rc-case-label">Problem</span>
+<span class="rc-case-value">
+  Revenue of £10.24M across 522K transactions lacked customer-level visibility, retention tracking, and forecasting capability for commercial decision-making.
+</span>
+</div>
+
+<div class="rc-case-row">
+  <span class="rc-case-label">Method</span>
+  <span class="rc-case-value">
+    <strong>Excel</strong> governance → <strong>Python RFM segmentation & cohort analysis</strong> → <strong>MySQL window functions</strong> → <strong>Power BI</strong> DAX dashboards across 3 reporting pages.
+  </span>
+</div>
+
+<div class="rc-case-row">
+  <span class="rc-case-label">Finding</span>
+  <span class="rc-case-value">
+    <strong>Top 20% of customers generated 68% of revenue.</strong> Q4 contributed 44.4% of annual sales, while 69.4% of repeat buyers never progressed into high-value segments.
+  </span>
+</div>
+
+<div class="rc-case-row">
+  <span class="rc-case-label">Recommendation</span>
+  <span class="rc-case-value">
+    Deploy targeted retention and win-back campaigns while prioritising Q4 inventory planning and high-value customer management.
+  </span>
+</div>
+</div>
 
   <!-- metrics -->
   <div class="project-metrics">
@@ -1155,18 +1166,58 @@ footer { padding: 1.8rem 4rem; border-top: 1px solid var(--border); display: fle
         </div>
       </div>
       <div class="project-case-meta">
-        <div class="pcm-row"><span class="pcm-label">Problem</span><span class="pcm-value">Can ML models reliably forecast national population trajectories across diverse demographic profiles over a 73-year span?</span></div>
-        <div class="pcm-row"><span class="pcm-label">Method</span><span class="pcm-value">Trained and evaluated multiple Scikit-learn models on UN data (India, China, US, UK, Brazil) - Basis of MSc distinction.</span></div>
-        <div class="pcm-row"><span class="pcm-label">Finding</span><span class="pcm-value"><strong>Models outperformed baseline forecasts</strong> on testing data - "lots of good decisions" per Aston University mentor.</span></div>
-        <div class="pcm-row"><span class="pcm-label">Recommendation</span><span class="pcm-value">Ensemble methods perform best across divergent demographic curves; single-model approaches underfit rapidly industrialising nations.</span></div>
-      </div>
-      <div class="project-metrics">
-        <div class="metric"><div class="metric-value">73yr</div><div class="metric-label">Data Span</div></div>
-        <div class="metric"><div class="metric-value">5</div><div class="metric-label">Countries</div></div>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">Python</span><span class="stack-tag">Scikit-learn</span><span class="stack-tag">Pandas</span><span class="stack-tag">UN Data</span><span class="stack-tag">Time Series</span>
-      </div>
+
+  <div class="pcm-row">
+    <span class="pcm-label">Problem</span>
+    <span class="pcm-value">
+      Population growth trends across India, China, UK, USA, and Brazil lacked a unified framework for long-term demographic forecasting.
+    </span>
+  </div>
+
+  <div class="pcm-row">
+    <span class="pcm-label">Method</span>
+    <span class="pcm-value">
+      Built a forecasting pipeline using UN demographic data, exploratory analysis, and predictive modelling with Linear Regression, ARIMA, Gradient Boosting, Exponential Smoothing, and Prophet.
+    </span>
+  </div>
+
+  <div class="pcm-row">
+    <span class="pcm-label">Finding</span>
+    <span class="pcm-value">
+      <strong>Linear Regression achieved R² = 0.999</strong> across all five countries, while Prophet delivered the strongest long-term forecasting performance.
+    </span>
+  </div>
+
+  <div class="pcm-row">
+    <span class="pcm-label">Recommendation</span>
+    <span class="pcm-value">
+      Prioritise Prophet for long-term forecasting and extend models with migration, fertility, and economic indicators for improved demographic planning.
+    </span>
+  </div>
+
+</div>
+
+<div class="project-metrics">
+
+  <div class="metric">
+    <div class="metric-value">73yr</div>
+    <div class="metric-label">Data Span</div>
+  </div>
+
+  <div class="metric">
+    <div class="metric-value">5</div>
+    <div class="metric-label">Countries</div>
+  </div>
+
+</div>
+
+<div class="project-stack">
+  <span class="stack-tag">Python</span>
+  <span class="stack-tag">Scikit-learn</span>
+  <span class="stack-tag">Forecasting</span>
+  <span class="stack-tag">UN Data</span>
+  <span class="stack-tag">Time Series</span>
+</div>
     </a>
 
   </div>
